@@ -13,12 +13,13 @@ try:
 except:
 	web = content.decode('utf8')
 if web == ('{"status":1002,"desc":"invilad-citykey"}'):
-	print('error')
-
-info = json.loads(web)
-a = info['data']
-b = a['forecast']
-c = b[0]
-print('%s // %s // %s ~ %s' % (c['date'], c['type'], c['low'], c['high']))
+	print('城市名称错误！')
+	quit()
+else:
+	info = json.loads(web)
+	a = info['data']
+	b = a['forecast']
+	c = b[0]
+	print('%s // %s // %s ~ %s' % (c['date'], c['type'], c['low'], c['high']))
 
 
